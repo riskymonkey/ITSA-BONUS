@@ -1,0 +1,321 @@
+#include <stdio.h>  
+#include <stdlib.h>  
+int main(){  
+    int num;  
+    while(scanf("%d", &num) != EOF){  
+        double ans = 1.6 * num;  
+        printf("%.1f\n", ans);  
+    }  
+    return 0;  
+}
+#include <stdlib.h>    
+#include <stdio.h>    
+#include <math.h>    
+    int main(){    
+    int x[2];    
+    for(int i=0;i<2;i++){    
+        scanf("%d",&x[i]);    
+    }    
+    if(pow(x[0],2)+pow(x[1],2)<=pow(100,2)){    
+        printf("inside\n");    
+    }    
+    else{    
+        printf("outside\n");    
+    }    
+}  
+#include <stdlib.h>    
+#include <stdio.h>    
+    int main(){    
+    int t[4];    
+    int min;    
+    int count,total;    
+    for(int i=0;i<4;i++){    
+        scanf("%d",&t[i]);    
+    }    
+    min=(t[2]*60+t[3])-(t[0]*60+t[1]);    
+    count=min/30;    
+    if(count<=4){    
+        total=count*30;    
+    }    
+    else if(count<=8){    
+        total=120+(count-4)*40;    
+    }    
+    else{    
+        total=280+(count-8)*60;    
+    }    
+    printf("%d\n",total);    
+}
+#include <stdlib.h>    
+#include <stdio.h>    
+#include <math.h>    
+    
+int main(){    
+    int x;    
+    scanf("%d",&x);    
+    if(x<0){    
+        x+=256;    
+    }    
+    int c[8];    
+    for(int i=7;i>=0;i--){    
+        c[i]=x/pow(2,i);    
+        x%=(int)pow(2,i);    
+        printf("%d",c[i]);    
+    }    
+    printf("\n");    
+}  
+#include <stdio.h>  
+#include <stdlib.h>  
+int main(){  
+    int month;  
+    while(scanf("%d", &month) != EOF){  
+         if(month <= 5 && month >= 3){  
+             printf("Spring\n");  
+         }  
+        else if(month <= 8 && month >= 6){  
+            printf("Summer\n");  
+        }  
+        else if(month <= 11 && month >= 9){  
+            printf("Autumn\n");  
+        }  
+        else if(month <= 12 && month >= 2){  
+            printf("Winter\n");  
+        }  
+    }  
+    return 0;  
+}
+#include <stdio.h>  
+#include <stdlib.h>  
+int main(){  
+    int num;  
+    scanf("%d", &num);  
+    char op;  
+    int a, b, c, d;  
+    for(int i = 0; i < num; i++){  
+        scanf(" %c%d%d%d%d", &op, &a, &b, &c, &d);  
+        if(op == '+'){  
+            printf("%d %d\n", a + c, b + d);  
+        }  
+        else if(op == '-'){  
+            printf("%d %d\n", a - c, b - d);  
+        }  
+        else if(op == '*'){  
+            printf("%d %d\n", a * c - b * d, b * c + a * d);  
+        }  
+    }  
+     
+    return 0;  
+}
+#include <stdio.h>  
+#include <stdlib.h>  
+#define ON 1  
+#define OFF 0  
+int main(){  
+    int num;  
+    while(scanf("%d", &num) != EOF){  
+        int i = 2, ans;  
+        int state = ON;  
+        if(num != 1){  
+            while(i != num){  
+                if(num % i == 0){  
+                    state = OFF;  
+                    break;  
+                }  
+                i++;  
+            }  
+            if(state == ON){  
+                printf("YES\n");  
+            }  
+            else{     
+                printf("NO\n");  
+            }  
+        }  
+        else{  
+            printf("YES\n");  
+        }  
+    }  
+    return 0;  
+}
+#include <stdio.h>  
+#include <stdlib.h>  
+int main(){  
+    int num;  
+    while(scanf("%d", &num) != EOF){  
+        int a = 1;  
+        int sum = 0;  
+        while(a != (num + 1)){  
+            if(a % 3 == 0){  
+                sum += a;  
+            }  
+            a++;  
+        }  
+        printf("%d\n", sum);  
+    }  
+    return 0;  
+}
+#include <stdio.h>  
+#include <stdlib.h>  
+int gcd(int i, int j){  
+    if(i % j == 0){  
+        return j;  
+    }  
+    else{  
+        return gcd(j, i % j);  
+    }  
+}  
+int main(){  
+    int num1, num2;  
+    while(scanf("%d %d", &num1, &num2) != EOF){  
+        int ans, max, min;  
+        if(num1 > num2){  
+            max = num1;  
+            min = num2;  
+        }  
+        else{  
+            max = num2;  
+            min = num1;  
+        }  
+        ans = gcd(max, min);  
+        printf("%d\n", ans);  
+    }  
+    return 0;  
+}
+#include <stdlib.h>    
+#include <stdio.h>    
+    
+int main(){    
+    int a, b, count;    
+    scanf("%d%d",&a,&b);    
+    int box[a * b];  
+    for(int i = 0; i < (a * b ); i++){  
+        scanf("%d", &box[i]);  
+    }  
+    for(int y = 0; y < b; y++){  
+        for(int x = 0; x < a; x++){  
+            count++;  
+            printf("%d", box[x * b + y]);  
+            if(count % a != 0){  
+                printf(" ");  
+            }  
+        }  
+        printf("\n");  
+    }  
+}
+#include <stdlib.h>  
+#include <stdio.h>  
+int func(int n){  
+    if(n == 1 || n == 0){  
+        return n + 1;  
+    }  
+    else{  
+        return (func(n - 1) + func(n / 2));  
+    }  
+}  
+int main(){  
+    int num;  
+    scanf("%d", &num);  
+    printf("%d\n", func(num));  
+}
+#include <stdlib.h>  
+#include <stdio.h>  
+#include <string.h>  
+int main(){  
+    char word[1024];  
+    while(scanf("%s", word) != EOF){  
+        int len = strlen(word);  
+        int i = 0, j = len - 1, mode = 1;  
+        while(i < j){  
+            if(word[i] != word[j]){  
+                mode = 0;  
+                break;  
+            }  
+            i++;  
+            j--;  
+            //mode = 1;  
+        }  
+        if(mode == 0){  
+            printf("NO\n");  
+        }  
+        else{  
+            printf("YES\n");  
+        }  
+    }  
+}
+#include <stdlib.h>  
+#include <stdio.h>  
+int main(){  
+    float num[10];  
+    for(int i = 0; i < 10; i++){  
+        scanf("%f", &num[i]);  
+    }  
+    int tmp;  
+    for(int i = 0; i < 9; i++){  
+        for(int j = 0; j < 9; j++){  
+            if(num[j] > num[j + 1]){  
+                tmp = num[j];  
+                num[j] = num[j + 1];  
+                num[j + 1] = tmp;  
+            }  
+        }  
+    }  
+    printf("maximum:%.2f\n", num[9]);  
+    printf("minimum:%.2f\n", num[0]);  
+}
+#include <stdio.h>  
+#include <stdlib.h>  
+int main(){  
+  int height;  
+  int gender;  
+  float op;  
+  while(scanf("%d %d", &height, &gender) != EOF){  
+      if(gender == 1){  
+          op = (height - 80) * 0.7;  
+          printf("%.1f\n", op);  
+      }  
+      else{  
+          op = (height - 70) * 0.6;  
+          printf("%.1f\n", op);  
+      }  
+  }  
+  return 0;  
+}
+#include <stdio.h>  
+#include <stdlib.h>  
+int main(){  
+  int year;  
+  while(scanf("%d",&year)!=EOF){  
+    if((year%4 == 0 && year%100 != 0)||(year%400 == 0)){  
+      printf("Bissextile Year\n");  
+    }  
+    else{  
+      printf("Common Year\n");  
+    }  
+  }  
+  return 0;  
+}
+#include <stdlib.h>  
+#include <stdio.h>  
+#include <string.h>  
+void de_n(char *ptr){  
+    char *qtr = strchr(ptr, '\n');  
+    if(qtr){  
+        *qtr = '\0';  
+    }  
+}  
+int main(){  
+    char sen[1024];  
+    int a;  
+    int len, sum = 0, cnt = 0;  
+    scanf("%d", &a);  
+    for(int j = 0; j <= a; j++){  
+        fgets(sen, 1024, stdin);  
+        de_n(sen);  
+        len = strlen(sen);  
+        for(int i = 0; i < len; i++){  
+            sum += sen[i];  
+        }  
+        if(cnt > 0)  
+            printf("%d\n", sum);  
+        sum = 0;  
+        cnt++;  
+    }  
+}
