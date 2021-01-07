@@ -1,3 +1,6 @@
+/*共17題*/
+
+/*題目2 公里轉換*/
 #include <stdio.h>  
 #include <stdlib.h>  
 int main(){  
@@ -8,6 +11,8 @@ int main(){
     }  
     return 0;  
 }
+
+/*題目3 是否在園內*/
 #include <stdlib.h>    
 #include <stdio.h>    
 #include <math.h>    
@@ -22,7 +27,9 @@ int main(){
     else{    
         printf("outside\n");    
     }    
-}  
+}
+
+/*題目4 停車費計算*/
 #include <stdlib.h>    
 #include <stdio.h>    
     int main(){    
@@ -45,10 +52,11 @@ int main(){
     }    
     printf("%d\n",total);    
 }
+
+/*題目5 10進位轉2進位*/
 #include <stdlib.h>    
 #include <stdio.h>    
 #include <math.h>    
-    
 int main(){    
     int x;    
     scanf("%d",&x);    
@@ -62,7 +70,9 @@ int main(){
         printf("%d",c[i]);    
     }    
     printf("\n");    
-}  
+}
+
+/*	題目6 季節判斷*/
 #include <stdio.h>  
 #include <stdlib.h>  
 int main(){  
@@ -83,6 +93,8 @@ int main(){
     }  
     return 0;  
 }
+
+/*題目7 複數運算*/
 #include <stdio.h>  
 #include <stdlib.h>  
 int main(){  
@@ -105,6 +117,8 @@ int main(){
      
     return 0;  
 }
+
+/*題目8 質數*/
 #include <stdio.h>  
 #include <stdlib.h>  
 #define ON 1  
@@ -135,6 +149,8 @@ int main(){
     }  
     return 0;  
 }
+
+/*題目9 計算正整數被3整除之數值之總和*/
 #include <stdio.h>  
 #include <stdlib.h>  
 int main(){  
@@ -152,6 +168,8 @@ int main(){
     }  
     return 0;  
 }
+
+/*題目10 gcd*/
 #include <stdio.h>  
 #include <stdlib.h>  
 int gcd(int i, int j){  
@@ -179,9 +197,10 @@ int main(){
     }  
     return 0;  
 }
+
+/*題目11 矩陣反轉*/
 #include <stdlib.h>    
 #include <stdio.h>    
-    
 int main(){    
     int a, b, count;    
     scanf("%d%d",&a,&b);    
@@ -200,6 +219,8 @@ int main(){
         printf("\n");  
     }  
 }
+
+/*題目12 遞迴*/
 #include <stdlib.h>  
 #include <stdio.h>  
 int func(int n){  
@@ -215,6 +236,8 @@ int main(){
     scanf("%d", &num);  
     printf("%d\n", func(num));  
 }
+
+/*題目14 回文*/
 #include <stdlib.h>  
 #include <stdio.h>  
 #include <string.h>  
@@ -240,6 +263,8 @@ int main(){
         }  
     }  
 }
+
+/*題目14 排序*/
 #include <stdlib.h>  
 #include <stdio.h>  
 int main(){  
@@ -260,6 +285,8 @@ int main(){
     printf("maximum:%.2f\n", num[9]);  
     printf("minimum:%.2f\n", num[0]);  
 }
+
+/*題目34 標準體重*/
 #include <stdio.h>  
 #include <stdlib.h>  
 int main(){  
@@ -278,6 +305,8 @@ int main(){
   }  
   return 0;  
 }
+
+/*題目36 閏年*/
 #include <stdio.h>  
 #include <stdlib.h>  
 int main(){  
@@ -292,6 +321,8 @@ int main(){
   }  
   return 0;  
 }
+
+/*題目25 字串ascii總和*/
 #include <stdlib.h>  
 #include <stdio.h>  
 #include <string.h>  
@@ -318,4 +349,42 @@ int main(){
         sum = 0;  
         cnt++;  
     }  
+}
+
+/*題目22 OOXX*/
+#include <stdio.h>  
+#include <stdlib.h>  
+int main(){  
+  int a[3][3];  
+  for(int i = 0; i <= 2; i++){  
+      scanf("%d %d %d", &a[i][0], &a[i][1], &a[i][2]);  
+  }  
+  if(a[0][0] == a[0][1] && a[0][0] == a[0][2]){  
+      printf("True\n");  
+  }  
+  else if(a[1][0] == a[1][1] && a[1][0] == a[1][2]){  
+      printf("True\n");  
+  }  
+  else if(a[2][0] == a[2][1] && a[2][0] == a[2][2]){  
+      printf("True\n");  
+  }  
+  else if(a[0][0] == a[1][0] && a[0][0] == a[2][0]){  
+      printf("True\n");  
+  }  
+  else if(a[0][1] == a[1][1] && a[0][1] == a[2][1]){  
+      printf("True\n");  
+  }  
+  else if(a[0][2] == a[1][2] && a[0][2] == a[2][2]){  
+      printf("True\n");  
+  }  
+  else if(a[0][0] == a[1][1] && a[0][0] == a[2][2]){  
+      printf("True\n");  
+  }  
+  else if(a[2][0] == a[1][1] && a[2][0] == a[0][2]){  
+      printf("True\n");  
+  }  
+  else{  
+      printf("False\n");  
+  }  
+  return 0;  
 }
